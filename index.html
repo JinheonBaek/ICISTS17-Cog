@@ -27,6 +27,14 @@
 
 	<div id="test">
 
+		<!-- A button for taking snaps -->
+		<form id="snapshot">
+			Username: <input type="text" name="usrname" id="usrname">
+			<input type="button" value="Take Snapshot" onClick="take_snapshot()">
+		</form>
+
+		</br>
+
 		<div id="my_camera"></div>
 
 		</br>
@@ -52,12 +60,6 @@
 		Webcam.attach( '#my_camera' );
 	</script>
 
-	<!-- A button for taking snaps -->
-	<form id="snapshot">
-		Username: <input type="text" name="usrname" id="usrname">
-		<input type="button" value="Take Snapshot" onClick="take_snapshot()">
-	</form>
-
 	<form id="upload">
 		<input type="button" value="Upload Image" onClick="uploadImage()">
 	</form>
@@ -72,7 +74,8 @@
 			Webcam.snap( function(data_uri) {
 				// display results in page
 				data = data_uri
-				document.getElementById('results').innerHTML = '<h3>Your name is ' + document.getElementById('usrname').value + '</h3>' + '<h2>Here is your image:</h2>' + '<img src="'+data+'"/>';
+				document.getElementById('results').innerHTML = '<h3>Your name is ' + document.getElementById('usrname').value + '</h3>' + '<h2>Here is your image:</h2>' 
+																+ '<img src="'+data+'" width=320px, height=180px>';
 			} );
 		}
 
