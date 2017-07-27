@@ -27,6 +27,9 @@ function analyzingFace(usrName) {
         })
         .done(function(data) {
             alert("success");
+            document.getElementById('resultsInfo').innerHTML = data[0].faceAttributes.age + '<br>';
+            document.getElementById('resultsInfo').innerHTML += data[0].faceAttributes.gender + '<br>';
+            document.getElementById('resultsInfo').innerHTML += data[0].faceAttributes.emotion.anger + '<br>';
         })
         .fail(function() {
             alert("error");
