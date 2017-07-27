@@ -25,9 +25,11 @@ function snapshot() {
 					type: 'POST',
 					success: function(data) {
 						document.getElementById('resultsInfo').innerHTML += '서버에 데이터 저장이 완료되었습니다.' + '<br>';
-
-						//Enroll face in Cognitie API
-						//addFace(usrName);
+						analyzingFace(usrName);
+					},
+					error: function(error) {
+						alert("Error!");
+						alert(error)
 					}
 				}); 
 			}); 				
