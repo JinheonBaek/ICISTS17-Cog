@@ -8,7 +8,6 @@ function snapshot() {
 			var raw_image_data = data_uri.replace(/^data\:image\/\w+\;base64\,/, '');
 			var usrName = document.getElementById('usrname').value;
 			var imgName = usrName + '.jpg';
-            document.getElementById('results').innerHTML = '<h2>Here is your image:</h2>' + '<img src="'+data_uri+'"/>';
 			
 			//Upload snapshot image on server for jpeg format
 			$(function() {
