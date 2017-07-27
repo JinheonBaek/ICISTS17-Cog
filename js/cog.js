@@ -1,5 +1,4 @@
-// cogEnrollFace
-
+// cog Face Detect API
 function analyzingFace(usrName) {
 	var subscriptionKey = "bb334b56e5a349b18e4aba3ed6d0d663";
 	var imgPath = "https://icists17-cog.azurewebsites.net/img/" + usrName + '.jpg';
@@ -27,13 +26,20 @@ function analyzingFace(usrName) {
         })
         .done(function(data) {
             alert("success");
-            document.getElementById('resultsInfo').innerHTML = data[0].faceAttributes.age + '<br>';
-            document.getElementById('resultsInfo').innerHTML += data[0].faceAttributes.gender + '<br>';
-            document.getElementById('resultsInfo').innerHTML += data[0].faceAttributes.emotion.anger + '<br>';
+            printData(data[0])
+            
         })
         .fail(function() {
             alert("error");
         });
     });
 
+}
+
+function printData(data) {
+    document.getElementById('resultsInfo').innerHTML = "Your face emotions are below" + '<br>'
+    for (var i in data.faceAttributes.emotion)
+    {
+        document.getElementById('resultsInfo').innerHTML += i + " = " + data['faceAttributes']['emotion'][i] + '<br>'
+    }
 }
