@@ -1,0 +1,85 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>ICISTS 2017 - Microsoft Cognitive Service Game at KAIST</title>
+	<style type="text/css">
+		body { font-family: Helvetica, sans-serif; }
+		h2, h3 { margin-top:0; }
+		form { margin-top: 15px; }
+		form > input { margin-right: 15px; }
+		/*
+		#results { float:right; margin:20px; padding:20px; border:1px solid; }
+		*/
+		#test { margin:20px; padding:20px; border:1px solid; }
+		#my_camera { padding:20px; border:1px solid; }
+		#results { padding:20px; border:1px solid; }
+		#resultsInfo { padding:20px; border:1px solid; }
+	</style>
+</head>
+<body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- First, include the Webcam.js JavaScript Library -->
+	<script type="text/javascript" src="js/webcam.min.js"></script>
+	<script type="text/javascript" src="js/snapshot.js"></script>
+
+	<div id="test">
+
+		<div id="my_camera"></div>
+
+		</br>
+
+		<div id="results">Your captured image will appear here...
+			
+		</div>
+
+	</div>
+
+	<div id="resultsInfo">
+		ResultsInfo will appear here...
+	</div>
+	
+	<!-- Configure a few settings and attach camera -->
+	<script language="JavaScript">
+		Webcam.set({
+			width: 640,
+			height: 360,
+			image_format: 'jpeg',
+			jpeg_quality: 90
+		});
+		Webcam.attach( '#my_camera' );
+	</script>
+
+	<!-- A button for taking snaps -->
+	<form id="snapshot">
+		Username: <input type="text" name="usrname" id="usrname">
+		<input type="button" value="Take Snapshot" onClick="take_snapshot()">
+	</form>
+
+	<form id="upload">
+		<input type="button" value="Upload Image" onClick="uploadImage()">
+	</form>
+
+	<!-- Code to handle taking the snapshot and displaying it locally -->
+	<script language="JavaScript">
+		// Write img data
+		data = ""
+
+		function take_snapshot() {
+			// take snapshot and get image data
+			Webcam.snap( function(data_uri) {
+				// display results in page
+				data = data_uri
+				document.getElementById('results').innerHTML = '<h3>Your name is ' + document.getElementById('usrname').value + '</h3>' + '<h2>Here is your image:</h2>' + '<img src="'+data+'"/>';
+			} );
+		}
+
+		function uploadImage() {
+			snapshot(data);
+		}
+	</script>
+	
+</body>
+</html>
