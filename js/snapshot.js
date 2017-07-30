@@ -23,11 +23,11 @@ function snapshot() {
 					contentType: false,
 					type: 'POST',
 					success: function(data) {
-						document.getElementById('resultsInfo').innerHTML = 'The image data is uploaded to the server' + '<br>' + 'Just wait a moment...';
+						document.getElementById('resultsInfo').innerHTML = 'The image data is uploaded to the server' + '<br>' + 'Cognitive Server calculate your emotions, Just wait a moment...';
 						analyzingFace(usrName);
 					},
 					error: function(error) {
-						alert("Error!");
+						document.getElementById('resultsInfo').innerHTML = "Error!";
 						alert(error)
 					}
 				}); 

@@ -25,19 +25,19 @@ function analyzingFace(usrName) {
 			"\"}",
         })
         .done(function(data) {
-            alert("success");
+            data['name'] = usrName;
             printData(data[0])
             
         })
         .fail(function() {
-            alert("error");
+            alert("Cog error");
         });
     });
 
 }
 
 function printData(data) {
-    document.getElementById('resultsInfo').innerHTML = "Your face emotions are below" + '<br>'
+    document.getElementById('resultsInfo').innerHTML = data['name'] + ", Your face emotions are below" + '<br>'
     for (var i in data.faceAttributes.emotion)
     {
         document.getElementById('resultsInfo').innerHTML += i + " = " + data['faceAttributes']['emotion'][i] + '<br>'

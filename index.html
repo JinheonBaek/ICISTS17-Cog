@@ -12,7 +12,7 @@
 		/*
 		#results { float:right; margin:20px; padding:20px; border:1px solid; }
 		*/
-		#test { margin:20px; padding:20px; border:1px solid; }
+		#main { margin:20px; padding:20px; border:1px solid; }
 		#my_camera { padding:20px; border:1px solid; }
 		#results { padding:20px; border:1px solid; }
 		#resultsInfo { padding:20px; border:1px solid; }
@@ -28,7 +28,7 @@
 	<!-- Include the Cog.js Javascript Library -->
 	<script type="text/javascript" src="js/cog.js"></script>
 
-	<div id="test">
+	<div id="main">
 
 		<!-- A button for taking snaps -->
 		<form id="snapshot">
@@ -79,6 +79,7 @@
 				data = data_uri
 				document.getElementById('results').innerHTML = '<h3>Your name is ' + document.getElementById('usrname').value + '</h3>' + '<h2>Here is your image:</h2>' 
 																+ '<img src="'+data+'" width=320px, height=240px>';
+				document.getElementById('resultsInfo').innerHTML = "Uploading image to server..."
 			} );
 		}
 
