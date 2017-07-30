@@ -26,7 +26,6 @@ function analyzingFace(usrName) {
         })
         .done(function(data) {
             data[0]['name'] = usrName;
-            alert(data[0]['name']);
             printData(data[0]);
             
         })

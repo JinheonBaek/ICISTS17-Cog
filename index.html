@@ -18,6 +18,7 @@
 		#results { padding:20px; border:1px solid; margin-left:auto; margin-right:auto; }
 		#resultsInfo { padding:20px; border:1px solid; margin-left:auto; margin-right:auto; }
 	</style>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css">
 </head>
 <body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -29,8 +30,27 @@
 	<!-- Include the Cog.js Javascript Library -->
 	<script type="text/javascript" src="js/cog.js"></script>
 
-	<div id="main">
+	<div class="ui top fixed menu" id="menu">
+		<a href="#guide" class="item">Guide</a>
+		<a href="#game" class="item">Game</a>
+	</div>
 
+	<span id="guide"></span>
+	<div class="ui main container" id="guide" style="padding-top:60px;">
+	<p>
+		이곳은 가이드가 들어갈 자리입니다.
+	</p>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</div>
+
+	</br>
+	<span id="game"></span>
+	<div class="ui main container" id="main">
 		<!-- A button for taking snaps -->
 		<form id="snapshot" style="text-align:center;">
 			Username: <input type="text" name="usrname" id="usrname">
@@ -47,10 +67,16 @@
 			
 		</div>
 
-	</div>
+		</br>
 
-	<div id="resultsInfo">
-		ResultsInfo will appear here...
+		<div id="resultsInfo">
+			ResultsInfo will appear here...
+		</div>
+
+		<form id="upload">
+		<input type="button" value="Upload Image" onClick="uploadImage()">
+		</form>
+
 	</div>
 	
 	<!-- Configure a few settings and attach camera -->
@@ -63,10 +89,6 @@
 		});
 		Webcam.attach( '#my_camera' );
 	</script>
-
-	<form id="upload">
-		<input type="button" value="Upload Image" onClick="uploadImage()">
-	</form>
 
 	<!-- Code to handle taking the snapshot and displaying it locally -->
 	<script language="JavaScript">
