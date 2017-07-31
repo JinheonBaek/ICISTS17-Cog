@@ -57,7 +57,7 @@
 		<!-- A button for taking snaps -->
 		<form id="snapshot" style="text-align:center;">
 			Username: <input type="text" name="usrname" id="usrname">
-			<input type="button" value="Take Snapshot" onClick="take_snapshot()">
+			<input class="ui button" type="button" value="Take Snapshot" onClick="take_snapshot()">
 		</form>
 
 		</br>
@@ -77,11 +77,13 @@
 		</div>
 
 		<form id="upload">
-		<input type="button" value="Upload Image" onClick="uploadImage()">
+			<button type="button" class="ui primary button" id="analysisImage" onClick="uploadImage()"> 
+				Analysing Image
+			</button>
 		</form>
 
 	</div>
-	
+
 	<!-- Configure a few settings and attach camera -->
 	<script language="JavaScript">
 		Webcam.set({
@@ -110,6 +112,7 @@
 
 		function uploadImage() {
 			document.getElementById('resultsInfo').innerHTML = "Uploading image to server..."
+			document.getElementById('analysisImage').className = "ui primary loading button";
 			snapshot(data);
 		}
 	</script>

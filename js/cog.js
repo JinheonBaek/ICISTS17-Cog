@@ -27,10 +27,12 @@ function analyzingFace(usrName) {
         .done(function(data) {
             data[0]['name'] = usrName;
             printData(data[0]);
+            document.getElementById('analysisImage').className = "ui primary button";
             
         })
         .fail(function() {
             alert("Cog error");
+            document.getElementById('analysisImage').className = "ui primary button";
         });
     });
 

@@ -28,7 +28,7 @@ function snapshot() {
 					},
 					error: function(error) {
 						document.getElementById('resultsInfo').innerHTML = "Error!";
-						alert(error)
+						alert(error);
 					}
 				}); 
 			}); 				
