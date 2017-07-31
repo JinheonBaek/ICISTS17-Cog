@@ -1,9 +1,16 @@
-<!doctype html>
+<!DOCTYPE HTML>
 
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>ICISTS 2017 - Microsoft Cognitive Service Game at KAIST</title>
+	
+	<meta property="description" content="ICISTS 2017 - Microsoft Cognitive Service Game at KAIST, Computer Recognizes your various emotions">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ICISTS 2017 - Microsoft Cognitive Service Game at KAIST">
+    <meta property="og:url" content="https://icists17-cog.azurewebsites.net/">
+    <meta property="og:description" content="ICISTS 2017 - Microsoft Cognitive Service Game at KAIST, Computer Recognizes your various emotions">
+	
 	<style type="text/css">
 		body { font-family: Helvetica, sans-serif; }
 		form { margin-top: 15px; }
@@ -14,6 +21,7 @@
 		#results { padding:20px; border:1px solid; margin-left:auto; margin-right:auto; }
 		#resultsInfo { padding:20px; border:1px solid; margin-left:auto; margin-right:auto; }
 	</style>
+
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css">
 </head>
 <body>
@@ -21,11 +29,12 @@
 
 	<!-- Include the Webcam.js JavaScript Library -->
 	<script type="text/javascript" src="js/webcam.min.js"></script>
+	<!-- Include the snapshot.js Javascript -->
 	<script type="text/javascript" src="js/snapshot.js"></script>
-
-	<!-- Include the Cog.js Javascript Library -->
+	<!-- Include the Cog.js Javascript -->
 	<script type="text/javascript" src="js/cog.js"></script>
 
+	<!-- Menu -->
 	<div class="ui top fixed menu" id="menu">
 		<div class="item">
 			Microsoft Cognitive Service - Computer Recognizes Your Emotions
@@ -35,9 +44,11 @@
 		<a href="#about" class="item">About</a>
 	</div>
 
+	<!-- Guide -->
 	<span id="guide"></span>
 	<div class="ui main container" id="guide" style="padding-top:60px;">
 		<h1>The Computer Recognizes Your Various Emotions!</h1>
+
 		<div class="ui message">
 			<div class="header">
 				<h2>Game Guide</h2>
@@ -54,6 +65,7 @@
 				</span>
 			</ul>
 		</div>
+
 		<table class="ui celled padded table" style="font-size:1.2em; line-height:1.5em;">
 			<thead>
 				<tr>
@@ -173,52 +185,58 @@
 				</tr>
 			</tbody>
 		</table>
+
 	</div>
 
-	</br>
+	<!-- Game -->
 	<span id="game"></span>
 	<div class="ui section divider"></div>
 
 	<div class="ui main container" style="font-size:1.2em;">
 		<h1>Let's Play The Simple Game!</h1>
+		
 		<div id="main">
-		<!-- A button for taking snaps -->
-		<form id="snapshot" style="text-align:center;">
-			<div class="ui input">
-			<input type="text" name="usrname" id="usrname" placeholder="Input your name">
-			&nbsp;
-			&nbsp;
-			<input class="ui button" type="button" value="Take Snapshot" onClick="take_snapshot()">
+			<!-- A button for taking snaps -->
+			<form id="snapshot" style="text-align:center;">
+				<div class="ui input">
+					<input type="text" name="usrname" id="usrname" placeholder="Input your name">
+					&nbsp;
+					&nbsp;
+					<input class="ui button" type="button" value="Take Snapshot" onClick="take_snapshot()">
+				</div>
+			</form>
+
+			</br>
+
+			<div id="my_camera">
+
 			</div>
-		</form>
 
-		</br>
+			</br>
 
-		<div id="my_camera"></div>
+			<div id="results">
+				Your captured image will appear here...
+			</div>
 
-		</br>
+			</br>
 
-		<div id="results">Your captured image will appear here...
-			
-		</div>
+			<div id="resultsInfo">
+				ResultsInfo will appear here...
+			</div>
 
-		</br>
+			<form id="upload">
+				<button type="button" class="ui primary button" id="analysisImage" onClick="uploadImage()"> 
+					Analysing Image
+				</button>
+			</form>
 
-		<div id="resultsInfo">
-			ResultsInfo will appear here...
-		</div>
-
-		<form id="upload">
-			<button type="button" class="ui primary button" id="analysisImage" onClick="uploadImage()"> 
-				Analysing Image
-			</button>
-		</form>
 		</div>
 	</div>
 
 	</br>
 	<div class="ui section divider"></div>
 
+	<!-- About -->
 	<span id="about"></span>
 	<div class="ui main container">
 		<div class="ui items">
@@ -240,7 +258,9 @@
 				<div class="description">
 					<p>
 						[Contact me]</br>
+						<i class="mail icon"></i>
 						E-mail: <a href="mailto:Jinheon.Baek@outlook.kr">Jinheon.Baek@outlook.kr</a></br>
+						<i class="linkify icon"></i>
 						Facebook: <a href="https://www.facebook.com/Jinheon.Baek">https://www.facebook.com/Jinheon.Baek</a>
 					</p>
 				</div>

@@ -43,9 +43,16 @@ function analyzingFace(usrName, imgName) {
 }
 
 function printData(data, usrName) {
-    document.getElementById('resultsInfo').innerHTML = usrName + ", Your face emotions are below" + '<br>'
+    document.getElementById('resultsInfo').innerHTML = usrName + ", Your face emotion values are below" + '<br>'
+    var threshold = [0.3, 1, 0.3, 1, 0.9, 1, 0.3, 0.8];
+    count = 0;
     for (var i in data.faceAttributes.emotion)
     {
-        document.getElementById('resultsInfo').innerHTML += i + " = " + data['faceAttributes']['emotion'][i] + '<br>'
+        if (data['faceAttributes']['emotion'][i] >= threshold[count]) {
+            document.getElementById('resultsInfo').innerHTML += '<strong>' + i + " = " + data['faceAttributes']['emotion'][i] + '</strong> <br>'
+        }
+        else {
+            document.getElementById('resultsInfo').innerHTML += i + " = " + data['faceAttributes']['emotion'][i] + '<br>'
+        }
     }
 }
