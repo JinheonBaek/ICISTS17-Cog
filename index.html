@@ -32,7 +32,7 @@
 
 	<div class="ui top fixed menu" id="menu">
 		<div class="item">
-			Microsoft Cognitive Service - Computer Recognize Your Emotions
+			Microsoft Cognitive Service - Computer Recognizes Your Emotions
 		</div>
 		<a href="#guide" class="item">Guide</a>
 		<a href="#game" class="item">Game</a>
@@ -166,8 +166,12 @@
 	<div class="ui main container" id="main">
 		<!-- A button for taking snaps -->
 		<form id="snapshot" style="text-align:center;">
-			Username: <input class="ui input" type="text" name="usrname" id="usrname">
+			<div class="ui input">
+			<input type="text" name="usrname" id="usrname" placeholder="Input your name">
+			&nbsp;
+			&nbsp;
 			<input class="ui button" type="button" value="Take Snapshot" onClick="take_snapshot()">
+			</div>
 		</form>
 
 		</br>
