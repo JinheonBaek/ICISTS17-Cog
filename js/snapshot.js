@@ -2,13 +2,13 @@
 // Webcam snapshot library using webcam.js in JavaScript 
 
 //Taking snapshot and showing image in div block
-function snapshot() {
+function snapshot(data) {
 	Webcam.snap(
 		function(data_uri) {
-			var raw_image_data = data_uri.replace(/^data\:image\/\w+\;base64\,/, '');
+			var raw_image_data = data.replace(/^data\:image\/\w+\;base64\,/, '');
 			var time = new Date();
 			var usrName = document.getElementById('usrname').value;
-			var imgName = usrName + time.getTime(); + '.jpg';
+			var imgName = usrName + time.getTime() + '.jpg';
 			
 			//Upload snapshot image on server for jpeg format
 			$(function() {
