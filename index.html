@@ -6,7 +6,6 @@
 	<title>ICISTS 2017 - Microsoft Cognitive Service Game at KAIST</title>
 	<style type="text/css">
 		body { font-family: Helvetica, sans-serif; }
-		h2, h3 { margin-top:0; }
 		form { margin-top: 15px; }
 		form > input { margin-right: 15px; }
 		/*
@@ -40,7 +39,24 @@
 
 	<span id="guide"></span>
 	<div class="ui main container" id="guide" style="padding-top:60px;">
-		<table class="ui celled padded table">
+		<h1>The Computer Recognizes Your Various Emotions!</h1>
+		<div class="ui message">
+			<div class="header">
+				<h1>Game Guide</h1>
+			</div>
+			<ul class="list">
+				<span style="font-size:1.3em; line-height:1.3em;">
+					<li>1. Roll the dice.</li>
+					<li>2. See the table below, and check your emotion that is matched to your dice.</li>
+					<li>3. Express your emotion in front of this computer camera.</li>
+					<li>4. Press the Take Snapshot Button as maintaing your face emotion.</li>
+					<li>5. Before press Analysing Image button, confirm your name and image.</li>
+					<li>6. Press the Analysing Image button, and wait a moment for handling your image.</li>
+					<li>7. If your score is higher than threshold, you will get some gifts!</li>
+				</span>
+			</ul>
+		</div>
+		<table class="ui celled padded table" style="font-size:1.2em; line-height:1.5em;">
 			<thead>
 				<tr>
 				<th class="center aligned">Dice Number</th>
@@ -162,6 +178,8 @@
 	</div>
 
 	</br>
+
+	<hr size="5">
 	<span id="game"></span>
 	<div class="ui main container" id="main">
 		<!-- A button for taking snaps -->
