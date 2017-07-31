@@ -25,21 +25,25 @@ function analyzingFace(usrName) {
 			"\"}",
         })
         .done(function(data) {
-            data[0]['name'] = usrName;
-            printData(data[0]);
-            document.getElementById('analysisImage').className = "ui primary button";
-            
+            if (data[0] === undefined) {
+                document.getElementById('resultsInfo').innerHTML = "No face was detected, Plz try again";
+            }
+            else {
+                printData(data[0], usrName);
+            }
         })
         .fail(function() {
             alert("Cog error");
+        })
+        .always(function() {
             document.getElementById('analysisImage').className = "ui primary button";
         });
     });
 
 }
 
-function printData(data) {
-    document.getElementById('resultsInfo').innerHTML = data['name'] + ", Your face emotions are below" + '<br>'
+function printData(data, usrName) {
+    document.getElementById('resultsInfo').innerHTML = usrName + ", Your face emotions are below" + '<br>'
     for (var i in data.faceAttributes.emotion)
     {
         document.getElementById('resultsInfo').innerHTML += i + " = " + data['faceAttributes']['emotion'][i] + '<br>'
