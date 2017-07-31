@@ -1,7 +1,7 @@
 // cog Face Detect API
-function analyzingFace(usrName) {
+function analyzingFace(usrName, imgName) {
 	var subscriptionKey = "bb334b56e5a349b18e4aba3ed6d0d663";
-	var imgPath = "https://icists17-cog.azurewebsites.net/img/" + usrName + '.jpg';
+	var imgPath = "https://icists17-cog.azurewebsites.net/img/" + imgName;
 
     $(function() {
         var params = {

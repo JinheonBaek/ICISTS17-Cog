@@ -6,8 +6,9 @@ function snapshot() {
 	Webcam.snap(
 		function(data_uri) {
 			var raw_image_data = data_uri.replace(/^data\:image\/\w+\;base64\,/, '');
+			var time = new Date();
 			var usrName = document.getElementById('usrname').value;
-			var imgName = usrName + '.jpg';
+			var imgName = usrName + time.getTime(); + '.jpg';
 			
 			//Upload snapshot image on server for jpeg format
 			$(function() {
@@ -24,7 +25,7 @@ function snapshot() {
 					type: 'POST',
 					success: function(data) {
 						document.getElementById('resultsInfo').innerHTML = 'The image data is uploaded to the server' + '<br>' + 'Cognitive Server calculates your emotions, Just wait a moment...';
-						analyzingFace(usrName);
+						analyzingFace(usrName, imgName);
 					},
 					error: function(error) {
 						document.getElementById('resultsInfo').innerHTML = "Error!";
