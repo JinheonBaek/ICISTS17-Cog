@@ -8,9 +8,6 @@
 		body { font-family: Helvetica, sans-serif; }
 		form { margin-top: 15px; }
 		form > input { margin-right: 15px; }
-		/*
-		#results { float:right; margin:20px; padding:20px; border:1px solid; }
-		*/
 		#main { margin:20px; padding:20px; border:1px solid; margin-left:auto; margin-right:auto; }
 		#snapshot { margin:auto; }
 		#my_camera { border:1px solid; margin-left:auto; margin-right:auto; }
@@ -35,6 +32,7 @@
 		</div>
 		<a href="#guide" class="item">Guide</a>
 		<a href="#game" class="item">Game</a>
+		<a href="#about" class="item">About</a>
 	</div>
 
 	<span id="guide"></span>
@@ -42,12 +40,12 @@
 		<h1>The Computer Recognizes Your Various Emotions!</h1>
 		<div class="ui message">
 			<div class="header">
-				<h1>Game Guide</h1>
+				<h2>Game Guide</h2>
 			</div>
 			<ul class="list">
 				<span style="font-size:1.3em; line-height:1.3em;">
 					<li>1. Roll the dice.</li>
-					<li>2. See the table below, and check your emotion that is matched to your dice.</li>
+					<li>2. See the table below, and check emotion that is matched to your dice number.</li>
 					<li>3. Express your emotion in front of this computer camera.</li>
 					<li>4. Press the Take Snapshot Button as maintaing your face emotion.</li>
 					<li>5. Before press Analysing Image button, confirm your name and image.</li>
@@ -178,10 +176,12 @@
 	</div>
 
 	</br>
-
-	<hr size="5">
 	<span id="game"></span>
-	<div class="ui main container" id="main">
+	<div class="ui section divider"></div>
+
+	<div class="ui main container" style="font-size:1.2em;">
+		<h1>Let's Play The Simple Game!</h1>
+		<div id="main">
 		<!-- A button for taking snaps -->
 		<form id="snapshot" style="text-align:center;">
 			<div class="ui input">
@@ -213,8 +213,43 @@
 				Analysing Image
 			</button>
 		</form>
-
+		</div>
 	</div>
+
+	</br>
+	<div class="ui section divider"></div>
+
+	<span id="about"></span>
+	<div class="ui main container">
+		<div class="ui items">
+			<h2>
+				About Me
+			</h2>
+			<div class="item">
+				<div class="image">
+				<img src="img/JinheonBaek.JPG">
+				</div>
+				<div class="content">
+				<a class="header">Jinheon Baek</a>
+				<div class="meta">
+					<span>
+						Korea Univ. Computer Science Sophomore Student</br>
+						Microsoft Student Partners Developer &amp; Lead
+					</span>
+				</div>
+				<div class="description">
+					<p>
+						[Contact me]</br>
+						E-mail: <a href="mailto:Jinheon.Baek@outlook.kr">Jinheon.Baek@outlook.kr</a></br>
+						Facebook: <a href="https://www.facebook.com/Jinheon.Baek">https://www.facebook.com/Jinheon.Baek</a>
+					</p>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="ui section divider"></div>
 
 	<!-- Configure a few settings and attach camera -->
 	<script language="JavaScript">
